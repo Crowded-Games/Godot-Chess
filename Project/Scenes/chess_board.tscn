@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://0pbx8kkrcrgg"]
+
+[ext_resource type="Script" path="res://Code/chess_board.gd" id="1_7f21n"]
+[ext_resource type="PackedScene" uid="uid://c1p4xlepqgwb6" path="res://Scenes/tile.tscn" id="2_bcgee"]
+
+[node name="chess_board" type="FlowContainer"]
+offset_right = 50.0
+offset_bottom = 50.0
+script = ExtResource("1_7f21n")
+tile = ExtResource("2_bcgee")

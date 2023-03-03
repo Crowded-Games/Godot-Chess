@@ -1,0 +1,42 @@
+[gd_scene load_steps=15 format=3 uid="uid://dgw2s3rrymbx7"]
+
+[ext_resource type="Script" path="res://Code/chess_game.gd" id="1_ep1t0"]
+[ext_resource type="Texture2D" uid="uid://b8e8353pyae4l" path="res://Images/Black/BKing.svg" id="2_t32rj"]
+[ext_resource type="Texture2D" uid="uid://cla2mshxp0elx" path="res://Images/Black/BQueen.svg" id="3_ktk7w"]
+[ext_resource type="Texture2D" uid="uid://2an2oqh0ks1y" path="res://Images/Black/BRook.svg" id="4_cw5jl"]
+[ext_resource type="Texture2D" uid="uid://bjneg3fh7mu2e" path="res://Images/Black/BKnight.svg" id="5_njluu"]
+[ext_resource type="Texture2D" uid="uid://ca8t2shoassp2" path="res://Images/Black/BBishop.svg" id="6_lhwlu"]
+[ext_resource type="Texture2D" uid="uid://1sql4pmy32c8" path="res://Images/Black/BPawn.svg" id="7_npnfq"]
+[ext_resource type="Texture2D" uid="uid://bgeifkewhw83q" path="res://Images/White/WKing.svg" id="8_1o1wm"]
+[ext_resource type="Texture2D" uid="uid://cr1lku07l36wb" path="res://Images/White/WQueen.svg" id="9_pkf7e"]
+[ext_resource type="Texture2D" uid="uid://qisaumos7b53" path="res://Images/White/WRook.svg" id="10_0p7t8"]
+[ext_resource type="Texture2D" uid="uid://dnp45xyp0eesa" path="res://Images/White/WKnight.svg" id="11_xikbm"]
+[ext_resource type="Texture2D" uid="uid://dl5dp47xg34sb" path="res://Images/White/WPawn.svg" id="12_3n76v"]
+[ext_resource type="Texture2D" uid="uid://bal1cx2x7hk7l" path="res://Images/White/Wbishop.svg" id="12_va3al"]
+[ext_resource type="PackedScene" uid="uid://0pbx8kkrcrgg" path="res://Scenes/chess_board.tscn" id="13_uvw0h"]
+
+[node name="chess_game" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ep1t0")
+black_king = ExtResource("2_t32rj")
+black_queen = ExtResource("3_ktk7w")
+black_rook = ExtResource("4_cw5jl")
+black_knight = ExtResource("5_njluu")
+black_bishop = ExtResource("6_lhwlu")
+black_pawn = ExtResource("7_npnfq")
+white_king = ExtResource("8_1o1wm")
+white_queen = ExtResource("9_pkf7e")
+white_rook = ExtResource("10_0p7t8")
+white_knight = ExtResource("11_xikbm")
+white_bishop = ExtResource("12_va3al")
+white_pawn = ExtResource("12_3n76v")
+
+[node name="chess_board" parent="." instance=ExtResource("13_uvw0h")]
+layout_mode = 0
+
+[connection signal="board_ready" from="chess_board" to="." method="spawn"]
